@@ -3,19 +3,12 @@
 import { $$, $s } from 'shed/sced.ts';
 $$`deno fmt`
 $$`deno lint`
-$$`deno test`
+$$`deno test -A`
 const gitStatus = $s`git status`
 
-if (gitStatus.includes('nothing to commit')) {
-    console.log('No changes to commit')
-    Deno.exit(0)
+if (!gitStatus.includes('Your branch is up to date') || !gitStatus.includes('nothing to commit')) {
+    $$`git status`
+
+    console.log('\nPlease commit your changes before publishing');
+    Deno.exit(1);
 }
-
-
-/**
- * On branch main
-Your branch is ahead of 'origin/main' by 3 commits.
-  (use "git push" to publish your local commits)
-
-nothing to commit, working tree clean
- */
