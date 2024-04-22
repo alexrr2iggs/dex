@@ -4,12 +4,13 @@ import { $$ } from 'shed/sced.ts';
 import * as denoConf from '../deno.json' with { type: 'json' };
 
 const version = denoConf.default.version;
+const tagName = `v${version}`;
 console.log(`Publishing version `, version);
 
-// $$`deno fmt`
-// $$`deno lint`
-// $$`deno test -A`
-// const gitStatus = $s`git status`
+$$`deno fmt`
+$$`deno lint`
+$$`deno test -A`
+//  const gitStatus = $s`git status`
 
 // if (!gitStatus.includes('Your branch is up to date') || !gitStatus.includes('nothing to commit')) {
 //     $$`git status`
@@ -20,4 +21,5 @@ console.log(`Publishing version `, version);
 // }
 
 
-$$`git tag -a "v${version}"  -m "v${version}"`;
+$$`git tag -a ${tagName}  -m v${tagName}`;
+$$`git push origin ${tagName}`;
