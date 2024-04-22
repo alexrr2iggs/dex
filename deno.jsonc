@@ -1,0 +1,21 @@
+{
+  "imports": {
+    "utils/": "./src/utils/",
+    "std/": "https://deno.land/std@0.222.0/",
+    "errors/": "./src/errors/"
+  },
+  "fmt": {
+    "lineWidth": 300,
+    "singleQuote": true,
+    "include": ["./src/**/*.ts"]
+  },
+
+  "tasks": {
+    "dev": "deno run --watch main.ts"
+  },
+
+  "compilerOptions": {
+  "strictNullChecks": false
+  },
+  "exclude": [".history"]
+}
