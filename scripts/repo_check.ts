@@ -3,6 +3,7 @@ import {
     Confirm,
     Input,
 } from 'https://deno.land/x/cliffy@v1.0.0-rc.4/prompt/mod.ts';
+import { $$ } from '../src/sced.ts';
 
 import chalk from 'npm:chalk';
 import { simpleGit, SimpleGit } from 'npm:simple-git';
@@ -61,3 +62,5 @@ if (deleted.length) {
         if (shouldAdd) git.commit(await Input.prompt({ message: chalk.gray('commit message'), default: deletedFile }), deletedFile);
     }
 }
+
+$$`git push`;
