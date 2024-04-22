@@ -1,4 +1,4 @@
-import { TemplateExpression } from 'types/template.ts';
+import { TemplateExpression } from '../types/template.ts';
 
 export function parseTemplate(template: TemplateStringsArray, ...expressions: TemplateExpression[]): string {
   const merged = [];

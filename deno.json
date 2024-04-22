@@ -1,12 +1,6 @@
 {
-  "version": "1.1.1",
-  "imports": {
-    "utils/": "./src/utils/",
-    "std/": "https://deno.land/std@0.222.0/",
-    "errors/": "./src/errors/",
-    "shed/": "./src/",
-    "types/": "./src/types/"
-  },
+  "version": "1.1.2",
+
   "fmt": {
     "lineWidth": 300,
     "singleQuote": true,

@@ -1,36 +1,13 @@
 
-import { assertEquals } from 'std/assert/assert_equals.ts';
-import { describe, it } from 'std/testing/bdd.ts';
-import { parseTemplate } from 'utils/template.ts';
-
+import { assertEquals } from 'https://deno.land/std@0.223.0/assert/assert_equals.ts';
+import { describe, it } from 'https://deno.land/std@0.223.0/testing/bdd.ts';
+import { parseTemplate } from '../../src/utils/template.ts';
 
 
 
 
 
 describe('template', () => {
-
-    // /**
-    //  * parse the comand and the arguments.
-    //  * example:
-    //  * ```ts
-    //  * const { cmd, args } = parseComand('deno run -A ./src/sced.ts -h');
-    //  * // cmd = 'deno'
-    //  * // args = ['run', '-A', './src/sced.ts', '-h']
-    //  * ```
-    //  * @param command 
-    //  * @returns 
-    //  */
-    // export function parseCommand(command: string): Command {
-    //     const comandTokens = command.split(/\s+/g);
-    //     const cmd = comandTokens.shift();
-
-    //     if (!cmd) {
-    //         throw new MalformedComand('malformed comand: ' + command);
-    //     }
-
-    //     return { cmd, args: comandTokens };
-    // }
 
     describe('parse template', () => {
         it('without expression', () => {

@@ -1,7 +1,7 @@
-import { exeToBytes, exeToStdOut, exeToString } from 'utils/command_execution.ts';
-import { parseCommand } from 'utils/command_parser.ts';
-import { TemplateExpression } from 'types/template.ts';
-import { parseTemplate } from 'utils/template.ts';
+import { TemplateExpression } from './types/template.ts';
+import { exeToBytes, exeToStdOut, exeToString } from './utils/command_execution.ts';
+import { parseCommand } from './utils/command_parser.ts';
+import { parseTemplate } from './utils/template.ts';
 
 /**
  * execute a command and return the stdout as a string.

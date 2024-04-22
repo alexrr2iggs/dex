@@ -1,4 +1,4 @@
-import { MalformedComand } from 'errors/malformed_comand.ts';
+import { MalformedComand } from '../errors/malformed_comand.ts';
 import { Command } from '../types/comand.ts';
 
 /**
