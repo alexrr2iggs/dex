@@ -28,6 +28,8 @@ if (!gitStatus.includes('Your branch is up to date') || !gitStatus.includes('not
 
 
 $$`deno task mkreadme`;
+$$`git commit -m"mkreadme"`;
+$$`git push`;
 
 $$`git tag -a ${tagName}  -m ${tagName}`;
 $$`git push origin ${tagName}`;

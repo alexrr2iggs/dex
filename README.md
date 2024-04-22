@@ -60,7 +60,7 @@ sced is incredibly straightforward to use. To execute a command, simply use the
 #### To String
 
 ```typescript
-import { $s } from "https://deno.land/x/sced@v1.1.3/src/mod.ts";
+import { $s } from "https://deno.land/x/sced@v1.1.4/src/mod.ts";
 
 const files:string = $s`ls`;
 // files == "deno.jsonc  LICENSE  README.md  src"
@@ -69,7 +69,7 @@ const files:string = $s`ls`;
 #### To Stdout
 
 ```typescript
-import { $$ } from "https://deno.land/x/sced@v1.1.3/src/mod.ts";
+import { $$ } from "https://deno.land/x/sced@v1.1.4/src/mod.ts";
 
 const exitCode:number = $$`ls`;
 // will print to stdout:
@@ -79,7 +79,7 @@ const exitCode:number = $$`ls`;
 #### To Uint8Array
 
 ```typescript
-import { $b } from "https://deno.land/x/sced@v1.1.3/src/mod.ts";
+import { $b } from "https://deno.land/x/sced@v1.1.4/src/mod.ts";
 
 const byteArray:Uint8Array = $b`curl https://filesamples.com/samples/image/jpg/sample_640%C3%97426.jpg`;
 
