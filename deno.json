@@ -1,5 +1,5 @@
 {
-  "version": "1.1.5",
+  "version": "1.1.6",
 
   "fmt": {
     "lineWidth": 300,
@@ -9,7 +9,7 @@
 
   "tasks": {
     "mkreadme": "./scripts/mk_readme.ts",
-    "repockeck": "./scripts/repo_check.ts",
+    "repocheck": "./scripts/repo_check.ts",
     "publish": "./scripts/publish.ts"
   },
 
