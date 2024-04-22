@@ -1,4 +1,5 @@
 {
+  "version": "1.0.0",
   "imports": {
     "utils/": "./src/utils/",
     "std/": "https://deno.land/std@0.222.0/",
@@ -16,7 +17,7 @@
   },
 
   "compilerOptions": {
-  "strictNullChecks": false
+    "strictNullChecks": false
   },
   "exclude": [".history"]
 }
