@@ -40,9 +40,7 @@ For now sced does not support piping or chaining multiple commands together. Thi
 So the following for example will not work:
 ```ts
 const files:string = $s`ls | grep .ts`;
-```
-Instead you will get an error like this:
-```ts
+
 ls: cannot access '|': No such file or directory
 ls: cannot access 'grep': No such file or directory
 ls: cannot access '.ts': No such file or directory
@@ -62,7 +60,7 @@ sced is incredibly straightforward to use. To execute a command, simply use the
 #### To String
 
 ```typescript
-import { $s } from "https://raw.githubusercontent.com/bitBeater/src/sced/1.1.0/mod.ts";
+import { $s } from "https://raw.githubusercontent.com/bitBeater/src/sced/1.1.0/src/mod.ts";
 
 const files:string = $s`ls`;
 // files == "deno.jsonc  LICENSE  README.md  src"
@@ -71,7 +69,7 @@ const files:string = $s`ls`;
 #### To Stdout
 
 ```typescript
-import { $$ } from "https://raw.githubusercontent.com/bitBeater/src/sced/1.1.0/mod.ts";
+import { $$ } from "https://raw.githubusercontent.com/bitBeater/sced/1.1.0/src/mod.ts";
 
 const exitCode:number = $$`ls`;
 // will print to stdout:
@@ -81,7 +79,7 @@ const exitCode:number = $$`ls`;
 #### To Uint8Array
 
 ```typescript
-import { $b } from "https://raw.githubusercontent.com/bitBeater/src/sced/1.1.0/mod.ts";
+import { $b } from "https://raw.githubusercontent.com/bitBeater/src/sced/1.1.0/src/mod.ts";
 
 const byteArray:Uint8Array = $b`curl https://filesamples.com/samples/image/jpg/sample_640%C3%97426.jpg`;
 
