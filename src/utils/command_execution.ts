@@ -42,7 +42,7 @@ export function exeToString(comand: string, ...args: string[]): string {
  * @returns
  */
 export function exeToStdOut(comand: string, ...args: string[]): number {
-  const command = new Deno.Command(comand, { args, stdout: 'inherit', stderr: 'inherit' });
+  const command = new Deno.Command(comand, { args, stdout: 'inherit', stderr: 'inherit', stdin: 'inherit' });
   const cmdOut = command.outputSync();
 
   if (cmdOut.code !== 0) {
