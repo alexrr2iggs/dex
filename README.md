@@ -89,7 +89,7 @@ const byteArray:Uint8Array = $b`curl https://filesamples.com/samples/image/jpg/s
 For issues related to sced:
 
 - Ensure Deno has the necessary permissions to execute shell commands `--allow-run`.
-- Verify that commands are correctly formatted as tagged template literals.
+- Verify that commands  are correctly formatted as tagged template literals.
 
 ## Contributors
 
