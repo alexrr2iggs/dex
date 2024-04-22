@@ -2,7 +2,8 @@
   "imports": {
     "utils/": "./src/utils/",
     "std/": "https://deno.land/std@0.222.0/",
-    "errors/": "./src/errors/"
+    "errors/": "./src/errors/",
+    "shed/": "./src/"
   },
   "fmt": {
     "lineWidth": 300,

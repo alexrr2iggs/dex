@@ -1,1 +1,4 @@
-export interface Command { cmd: string, args: string[] }
+export interface Command {
+  cmd: string;
+  args: string[];
+}
