@@ -9,6 +9,7 @@
 
   "tasks": {
     "mkreadme": "./scripts/mk_readme.ts",
+    "repockeck": "./scripts/repo_check.ts",
     "publish": "./scripts/publish.ts"
   },
 
