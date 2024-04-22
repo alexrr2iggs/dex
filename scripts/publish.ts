@@ -28,7 +28,7 @@ if (!gitStatus.includes('Your branch is up to date') || !gitStatus.includes('not
 
 
 $$`deno task mkreadme`;
-console.log('exitcode', $$`git commit -a -m "mkreadme"`);
+$$`git commit -a -m "mkreadme"`;
 $$`git push`;
 
 $$`git tag -a ${tagName}  -m ${tagName}`;
