@@ -5,13 +5,19 @@ import { $$, $s } from '../src/sced.ts';
 
 const version = denoConf.default.version;
 const tagName = `v${version}`;
-console.log(`Publishing version `, version);
+console.log(`\n\npublishing version `, version, '\n');
 
+console.log('formatting...')
 $$`deno fmt`
-$$`deno lint`
-$$`deno test -A`
-const gitStatus = $s`git status`
 
+console.log('linting...')
+$$`deno lint`
+
+console.log('testing...')
+$$`deno test -A`
+
+
+const gitStatus = $s`git status`
 if (!gitStatus.includes('Your branch is up to date') || !gitStatus.includes('nothing to commit')) {
     $$`git status`
 
@@ -21,5 +27,8 @@ if (!gitStatus.includes('Your branch is up to date') || !gitStatus.includes('not
 }
 
 
+$$`deno task mkreadme`;
+
 $$`git tag -a ${tagName}  -m ${tagName}`;
 $$`git push origin ${tagName}`;
+console.log(`\n\nversion ${version} successfully published`);
