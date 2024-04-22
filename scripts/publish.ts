@@ -19,10 +19,8 @@ $$`deno test -A`
 
 
 
-$$`deno task repockeck`;
 $$`deno task mkreadme`;
-$$`git commit -a -m "mkreadme"`;
-$$`git push`;
+$$`deno task repocheck`;
 
 $$`git tag -a ${tagName}  -m ${tagName}`;
 $$`git push origin ${tagName}`;
