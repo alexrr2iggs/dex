@@ -21,4 +21,4 @@ if (!gitStatus.includes('Your branch is up to date') || !gitStatus.includes('not
 }
 
 
-exeToStdOut('git', `tag`, `-a v${version}`, `-m "v${version}"`);
+exeToStdOut('git', `tag`, `-a "v${version}"`, `-m "v${version}"`);
