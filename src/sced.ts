@@ -3,7 +3,6 @@ import { parseCommand } from 'utils/command_parser.ts';
 import { TemplateExpression } from 'types/template.ts';
 import { parseTemplate } from 'utils/template.ts';
 
-
 /**
  * execute a command and return the stdout as a string.
  * @param command
