@@ -18,22 +18,10 @@ if (not_added.length) {
     for (const untrackedFile of not_added) {
         const message = chalk.green('add ') + chalk.gray(untrackedFile)
         const shouldAdd = await Confirm.prompt({ message, default: false });
-        if (shouldAdd) git.add(untrackedFile);
+        if (shouldAdd) await git.add(untrackedFile);
     }
 }
 
-
-// const modified = (await git.status()).modified;
-
-// if (modified.length) {
-//     console.log(`\n\n\nthe following files are modified:\n${chalk.yellow(modified.join('\n'))}\n\n`);
-
-//     for (const modifiedFile of modified) {
-//         const message = chalk.green('commit ') + chalk.gray(modifiedFile)
-//         const shouldAdd = await Confirm.prompt({ message, default: false });
-//         if (shouldAdd) git.commit(await Input.prompt({ message: chalk.gray('commit message'), default: modifiedFile }), modifiedFile);
-//     }
-// }
 
 const staged = (await git.status()).staged;
 
@@ -43,15 +31,21 @@ if (staged.length) {
     for (const modifiedFile of staged) {
         const message = chalk.green('commit ') + chalk.gray(modifiedFile)
         const shouldAdd = await Confirm.prompt({ message, default: false });
-        if (shouldAdd) git.commit(await Input.prompt({ message: chalk.gray('commit message'), default: modifiedFile }), modifiedFile);
+        if (shouldAdd) await git.commit(await Input.prompt({ message: chalk.gray('commit message'), default: modifiedFile }), modifiedFile);
     }
 }
 
 
 
 
+const modified = (await git.status()).modified;
 
+if (modified.length) {
+    console.log(`\n\n\nthe following files are modified:\n${chalk.yellow(modified.join('\n'))}\n\n`);
 
-
-
-
+    for (const modifiedFile of modified) {
+        const message = chalk.green('commit ') + chalk.gray(modifiedFile)
+        const shouldAdd = await Confirm.prompt({ message, default: false });
+        if (shouldAdd) git.commit(await Input.prompt({ message: chalk.gray('commit message'), default: modifiedFile }), modifiedFile);
+    }
+}
