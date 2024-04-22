@@ -4,7 +4,8 @@
     "utils/": "./src/utils/",
     "std/": "https://deno.land/std@0.222.0/",
     "errors/": "./src/errors/",
-    "shed/": "./src/"
+    "shed/": "./src/",
+    "types/": "./src/types/"
   },
   "fmt": {
     "lineWidth": 300,
