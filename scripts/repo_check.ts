@@ -49,3 +49,15 @@ if (modified.length) {
         if (shouldAdd) git.commit(await Input.prompt({ message: chalk.gray('commit message'), default: modifiedFile }), modifiedFile);
     }
 }
+
+const deleted = (await git.status()).deleted;
+
+if (deleted.length) {
+    console.log(`\n\n\nthe following files are deleted:\n${chalk.red(deleted.join('\n'))}\n\n`);
+
+    for (const deletedFile of deleted) {
+        const message = chalk.red('commit ') + chalk.gray(deletedFile)
+        const shouldAdd = await Confirm.prompt({ message, default: false });
+        if (shouldAdd) git.commit(await Input.prompt({ message: chalk.gray('commit message'), default: deletedFile }), deletedFile);
+    }
+}
